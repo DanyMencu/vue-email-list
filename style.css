@@ -16,3 +16,9 @@
 .display li {
     margin: 15px 0;
 }
+
+
+.display .loading {
+    color: rgb(219, 39, 39);
+    font-weight: 600;
+}
