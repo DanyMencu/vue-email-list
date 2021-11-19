@@ -7,6 +7,37 @@
 
 const root = new Vue({
     el: '#root',
-    data: {},
-    methods: {},
+    data: {
+        mailApiURL: 'https://flynn.boolean.careers/exercises/api/random/mail',
+        mailCollections: [],
+    },
+    computed: {
+        allMailUploaded() {
+            return ( (this.mailCollections.length + 1) > 10 ) ? true : false;
+        }
+    },
+    created() {
+        this.loadMails()
+    },
+    methods: {
+        loadMails() {
+            let count = 0;
+
+            while (count < 10) {
+                axios.get(this.mailApiURL)
+                .then( response => {
+                    console.log(response.data.response);
+                    this.mailCollections.push(response.data.response)
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+
+
+                count++;
+            };
+
+            console.log(this.mailCollections);
+        },
+    }, 
 });

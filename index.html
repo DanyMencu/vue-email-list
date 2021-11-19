@@ -12,7 +12,15 @@
 </head>
 <body>
     <div id="root">
-        <div class="display"></div>
+        <ul class="display">
+            <li 
+                v-for="email in mailCollections"
+                v-if="allMailUploaded"
+            >
+                {{ email }}
+            </li>
+        </ul>
+        <h1 v-else>Loading...</h1>
     </div>
 
     <!-- JS -->
