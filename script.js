@@ -17,7 +17,7 @@ const root = new Vue({
         }
     },
     created() {
-        this.loadMails()
+            this.loadMails()
     },
     methods: {
         loadMails() {
@@ -26,13 +26,11 @@ const root = new Vue({
             while (count < 10) {
                 axios.get(this.mailApiURL)
                 .then( response => {
-                    console.log(response.data.response);
                     this.mailCollections.push(response.data.response)
                 })
                 .catch(error => {
                     console.log(error);
                 });
-
 
                 count++;
             };

@@ -12,15 +12,14 @@
 </head>
 <body>
     <div id="root">
-        <ul class="display">
+        <ul class="display" v-if="allMailUploaded">
             <li 
                 v-for="email in mailCollections"
-                v-if="allMailUploaded"
             >
                 {{ email }}
             </li>
-            <li v-else class="loading">Loading...</li>
         </ul>
+        <div v-else class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
 
     <!-- JS -->
