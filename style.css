@@ -15,6 +15,7 @@
 
 .display li {
     margin: 15px 0;
+    list-style: none;
 }
 
 
@@ -23,7 +24,7 @@
     font-weight: 600;
 }
 
-/* Spinner */
+/** Spinner */
 .lds-spinner,
 .lds-spinner div,
 .lds-spinner div:after {
